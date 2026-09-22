@@ -25,7 +25,7 @@ function syncInternalLanguageLinks(){
   document.querySelectorAll('a[href]').forEach(link=>{
     const raw=link.getAttribute('href');
     if(!raw||raw.startsWith('#'))return;
-    const target=new URL(raw,window.location.origin);
+    const target=new URL(raw,document.baseURI);
     if(target.origin!==window.location.origin||target.pathname.endsWith('.pdf'))return;
     target.searchParams.set('lang',language);
     link.href=`${target.pathname}${target.search}${target.hash}`;
