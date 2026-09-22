@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://leomai-author.com/sitemap.xml
